@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <span>Case Sensitive</span> <input type="radio" value="sensitive" name="check" id="sensitive" onclick="check()">
-    <span>Case Insensitive</span> <input type="radio" value="insensitive" name="check" id="insensitive" onclick="check()">
+    <!-- <span>Case Sensitive</span> <input type="radio" value="sensitive" name="check" id="sensitive" onchange="check()">
+    <span>Case Insensitive</span> <input type="radio" value="insensitive" name="check" id="insensitive" > -->
     <div class="filter">
-        <input type="text" id="value" value="" onkeyup="check()">
+        <input type="text" id="value" value="" onkeyup="filter()">
         <input type="button" value="Search">
         <ul id="show"></ul>
     </div>
@@ -20,33 +20,33 @@
 
 
     <script>
-       window.onload=function(){
-           document.getElementById('value').disabled=true;
+    //     window.onload=function(){
+    //         document.getElementById('value').disabled=true;
            
-       }
-       document.getElementsByName('sensitive').onchange=function (){
-        if(document.getElementById('sensitive').checked==true ){
-            document.getElementById('value').disabled=false;
-           }
-       }
-       document.getElementById('insensitive').onchange=function (){
-        if(document.getElementById('insensitive').checked==true ){
-            document.getElementById('value').disabled=false;
-           }
-       }
+    //     }
+    //    document.getElementsByName('sensitive').onchange=function (){
+    //     if(document.getElementById('sensitive').checked==true ){
+    //         document.getElementById('value').disabled=false;
+    //        }
+    //    }
+    //    document.getElementById('insensitive').onchange=function (){
+    //     if(document.getElementById('insensitive').checked==true ){
+    //         document.getElementById('value').disabled=false;
+    //        }
+    //    }
 
-        function check() {
-            let sensitive = document.getElementById('sensitive');
-            let insensitive = document.getElementById('insensitive');
-            console.log(sensitive);
-            console.log(insensitive);
-            if(sensitive.checked==true) {
-                filter();
-            }
-            else {
-                filter();
-            }
-        }
+    //     function check() {
+    //         let sensitive = document.getElementById('sensitive');
+    //         let insensitive = document.getElementById('insensitive');
+    //         console.log(sensitive);
+    //         console.log(insensitive);
+    //         if(sensitive.checked==true) {
+    //             filter();
+    //         }
+    //         else {
+    //             filter();
+    //         }
+    //     }
 
 
 
@@ -63,7 +63,7 @@
 
         function filter() {
 
-            check()
+          // check()
             value = document.getElementById('value').value;
             console.log(value)
             search(value);
@@ -80,18 +80,17 @@
         function search(inp) {
             document.getElementById('show').innerHTML = "";
             arrOfNames.forEach(element => {
-            if(sensitive){
+           // if(sensitive){
                 if (element.includes(inp)) {
-                    console.log("in");
                     show. innerHTML += ` <li class="list-group-item" onclick="assignData()" >${element}</li>`
                 }
-            }
-            else{
-                console.log(element.toLowerCase());
-                if ((element.toLowerCase()).includes(inp)) {
-                    show. innerHTML += ` <li class="list-group-item" onclick="assignData()" >${element}</li>`
-                }
-            }
+          //  }
+            // else{
+            //     console.log(element.toLowerCase());
+            //     if ((element.toLowerCase()).includes(inp)) {
+            //         show. innerHTML += ` <li class="list-group-item" onclick="assignData()" >${element}</li>`
+            //     }
+            // }
             
             
                 
